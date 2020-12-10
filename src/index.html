@@ -6,12 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Excel Application</title>
 </head>
 <body>
     <div id="app" class="container">
         <div class="excel">
-            <header class="excel-header"></header>
+            <header class="excel-header">
+                <input type="text" class="excel-header__input" value="Новая таблица">
+                <div class="excel-header__btns">
+                    <div class="btn">
+                       <span class="material-icons">delete</span>
+                    </div>
+                    <div class="btn">
+                        <span class="material-icons">exit_to_app</span>
+                    </div>
+                </div>
+            </header>
             <header class="excel-toolbar"></header>
             <header class="excel-formula"></header>
             <header class="excel-table"></header>

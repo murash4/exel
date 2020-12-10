@@ -1,4 +1,28 @@
 @import "variables";
 @import "mixins";
 
-.excel-header {}
+.excel-header {
+  display: flex;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 8px 4px 0;
+}
+
+.excel-header__input {
+  height: 20px;
+  padding: 2px 7px;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 18px;
+  color: #000;
+  outline: none;
+
+  &:hover {
+    border: 1px solid $border-color;
+  }
+
+  &:focus {
+    border: 2px solid #1a73e8;
+  }
+}
