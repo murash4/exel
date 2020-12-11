@@ -10,68 +10,35 @@
     <title>Excel Application</title>
 </head>
 <body>
-    <div id="app" class="container">
-        <div class="excel">
-            <header class="excel-header">
-                <input type="text" class="excel-header__input" value="Новая таблица">
-                <div class="excel-header__btns">
-                    <div class="btn">
-                       <span class="material-icons">delete</span>
-                    </div>
-                    <div class="btn">
-                        <span class="material-icons">exit_to_app</span>
-                    </div>
-                </div>
-            </header>
-            <div class="excel-toolbar">
-                <div class="btn btn--green">
-                    <span class="material-icons">format_align_left</span>
-                </div>
-                <div class="btn btn--green">
-                    <span class="material-icons">format_align_center</span>
-                </div>
-                <div class="btn btn--green">
-                    <span class="material-icons">format_align_right</span>
-                </div>
-                <div class="btn btn--green">
-                    <span class="material-icons">format_bold</span>
-                </div>
-                <div class="btn btn--green">
-                    <span class="material-icons">format_italic</span>
-                </div>
-                <div class="btn btn--green">
-                    <span class="material-icons">format_underlined</span>
+    <div id="app">
+        <div class="db">
+            <div class="db__header">
+                <h1>Excel Dashboard</h1>
+            </div>
+            <div class="db__new">
+                <div class="db__view">
+                    <a href="" class="db__create">Новая<br>Таблица</a>
                 </div>
             </div>
-            <div class="excel-formula">
-                <div class="excel-formula__info">fx</div>
-                <div class="excel-formula__input" contenteditable spellcheck="false"></div>
-            </div>
-            <div class="excel-table">
-                <div class="excel-table__row">
-                    <div class="excel-table__row-info"></div>
-                    <div class="excel-table__row-data">
-                        <div class="excel-table__col">A</div>
-                        <div class="excel-table__col">B</div>
-                        <div class="excel-table__col">C</div>
-                    </div>
+            <div class="db__table db__view">
+                <div class="db__list-header">
+                    <span>Название</span>
+                    <span>Дата открытия</span>
                 </div>
-                <div class="excel-table__row">
-                    <div class="excel-table__row-info">1</div>
-                    <div class="excel-table__row-data">
-                        <div class="excel-table__cell selected" contenteditable>1</div>
-                        <div class="excel-table__cell" contenteditable>2</div>
-                        <div class="excel-table__cell" contenteditable>3</div>
-                    </div>
-                </div>
-                <div class="excel-table__row">
-                    <div class="excel-table__row-info">2</div>
-                    <div class="excel-table__row-data">
-                        <div class="excel-table__cell" contenteditable>1</div>
-                        <div class="excel-table__cell" contenteditable>2</div>
-                        <div class="excel-table__cell" contenteditable>3</div>
-                    </div>
-                </div>
+                <ul class="db__list">
+                    <li class="db__list-record">
+                        <a href="" class="db__list-record-link">Таблица №1</a>
+                        <strong>12.06.2020</strong>
+                    </li>
+                    <li class="db__list-record">
+                        <a href="" class="db__list-record-link">Таблица №2</a>
+                        <strong>12.06.2020</strong>
+                    </li>
+                    <li class="db__list-record">
+                        <a href="" class="db__list-record-link">Таблица №3</a>
+                        <strong>12.06.2020</strong>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
