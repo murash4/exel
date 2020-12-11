@@ -13,5 +13,10 @@ body {
 }
 
 .excel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-size: 0.8rem;
   color: #888;
 }
