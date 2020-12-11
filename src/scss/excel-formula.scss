@@ -1,4 +1,26 @@
 @import "variables";
 @import "mixins";
 
-.excel-formula {}
+.excel-formula {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  border-bottom: 1px solid $border-color;
+}
+
+.excel-formula__info {
+  min-width: $info-cell-width;
+  border-right: 1px solid $border-color;
+  font-style: italic;
+  font-size: 18px;
+  text-align: center;
+}
+
+.excel-formula__input {
+  flex: 1 1 auto;
+  height: 100%;
+  padding: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000;
+}
