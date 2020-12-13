@@ -8,13 +8,22 @@ function toCell () {
 }
 
 function toColumn (col) {
-	return `<div class="excel-table__col">${col}</div>`
+	return `
+		<div class="excel-table__col">
+			${col}
+			<div class="excel-table__col-resize"></div>
+		</div>
+	`
 }
 
 function createRow (index, content) {
+	const resizer = index ? `<div class="excel-table__row-resize"></div>` : ''
 	return `
 		<div class="excel-table__row">
-			<div class="excel-table__row-info">${index || ''}</div>
+			<div class="excel-table__row-info">
+				${index || ''}
+				${resizer}
+			</div>
 			<div class="excel-table__row-data">${content}</div>
 		</div>
 	`
