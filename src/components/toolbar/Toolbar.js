@@ -33,7 +33,5 @@ export class Toolbar extends ExcelComponent {
 		`
 	}
 
-	onClick (event) {
-		console.log('toolbar clicked')
-	}
+	onClick () {}
 }
