@@ -15,12 +15,14 @@
       }
     ],
     "linebreak-style": ["error", "windows"],
+    "operator-linebreak": "off",
     "indent": ["error", "tab", { "SwitchCase": 1 }],
     "no-tabs": "off",
     "comma-dangle": ["error", "never"],
     "arrow-parens": ["error", "as-needed"],
     "require-jsdoc": "off",
-    "space-before-function-paren": ["error", "always"]
+    "space-before-function-paren": ["error", "always"],
+    "max-len": "off"
   },
   "extends": [
     "eslint:recommended",
