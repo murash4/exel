@@ -9,15 +9,15 @@ function toCell () {
 
 function toColumn (col) {
 	return `
-		<div class="excel-table__col">
+		<div class="excel-table__col" data-type="resizable">
 			${col}
-			<div class="excel-table__col-resize"></div>
+			<div class="excel-table__col-resize" data-resize="col"></div>
 		</div>
 	`
 }
 
 function createRow (index, content) {
-	const resizer = index ? `<div class="excel-table__row-resize"></div>` : ''
+	const resizer = index ? `<div class="excel-table__row-resize" data-resize="row"></div>` : ''
 	return `
 		<div class="excel-table__row">
 			<div class="excel-table__row-info">
