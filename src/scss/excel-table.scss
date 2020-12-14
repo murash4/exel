@@ -76,6 +76,7 @@
 
 .excel-table__col-resize {
   top: 0;
+  z-index: 1;
   width: 4px;
 
   &:hover {
