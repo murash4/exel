@@ -19,3 +19,26 @@ export function matrix ($target, $current) {
 		return acc
 	}, [])
 }
+
+export function nextSelector (key, { row, col }) {
+	const MIN_VALUE = 0
+
+	switch (key) {
+		case 'Enter':
+		case 'ArrowDown':
+			row++
+			break
+		case 'Tab':
+		case 'ArrowRight':
+			col++
+			break
+		case 'ArrowLeft':
+			if (col > MIN_VALUE) col--
+			break
+		case 'ArrowUp':
+			if (row > MIN_VALUE) row--
+			break
+	}
+
+	return `[data-id="${row}:${col}"]`
+}
