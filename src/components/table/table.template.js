@@ -5,7 +5,14 @@ const CODES = {
 
 function toCell (row) {
 	return function (_, col) {
-		return `<div class="excel-table__cell" data-col="${col}" contenteditable data-id="${row}:${col}" ></div>`
+		return `
+			<div
+				class="excel-table__cell"
+				contenteditable
+				data-col="${col}"
+				data-type="cell"
+				data-id="${row}:${col}"
+			></div>`
 	}
 }
 
