@@ -3,14 +3,19 @@ const CODES = {
 	Z: 90
 }
 const DEFAULT_WIDTH = 120
+const DEFAULT_HEIGHT = 24
 
 function getWidth (state, index) {
 	return (state ? state[index] : DEFAULT_WIDTH) + 'px'
 }
 
+function getHeight (state, index) {
+	return (state ? state[index] : DEFAULT_HEIGHT) + 'px'
+}
+
 function toCell (state, row) {
 	return function (_, col) {
-		const width = getWidth(state.colState, col)
+		const width = getWidth(state, col)
 
 		return `
 			<div
@@ -38,10 +43,17 @@ function toColumn ({ col, index, width }) {
 	`
 }
 
-function createRow (index, content) {
+function createRow (index, content, state) {
 	const resizer = index ? `<div class="excel-table__row-resize" data-resize="row"></div>` : ''
+	const height = getHeight(state, index)
+
 	return `
-		<div class="excel-table__row" data-type="resizable">
+		<div
+			class="excel-table__row"
+			style="height: ${height}"
+			data-type="resizable"
+			data-row="${index}"
+		>
 			<div class="excel-table__row-info">
 				${index || ''}
 				${resizer}
@@ -60,7 +72,7 @@ function withWidthFrom (state) {
 		return {
 			col,
 			index,
-			width: getWidth(state.colState, index)
+			width: getWidth(state, index)
 		}
 	}
 }
@@ -71,19 +83,19 @@ export function createTable (rowsCount = 15, state = {}) {
 	const cols = new Array(colsCount)
 		.fill('')
 		.map(toChar)
-		.map(withWidthFrom(state))
+		.map(withWidthFrom(state.colState))
 		.map(toColumn)
 		.join('')
 
-	rows.push(createRow(null, cols))
+	rows.push(createRow(null, cols, {}))
 
 	for (let row = 0; row < rowsCount; row++) {
 		const cels = new Array(colsCount)
 			.fill('')
-			.map(toCell(state, row))
+			.map(toCell(state.colState, row))
 			.join('')
 
-		rows.push(createRow(row + 1, cels))
+		rows.push(createRow(row + 1, cels, state.rowState))
 	}
 
 	return rows.join('')
