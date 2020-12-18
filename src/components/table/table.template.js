@@ -1,3 +1,5 @@
+import { toInlineStyles } from '@core/utils'
+
 const CODES = {
 	A: 65,
 	Z: 90
@@ -17,12 +19,13 @@ function toCell (state, row) {
 	return function (_, col) {
 		const width = getWidth(state.colState, col)
 		const id = `${row}:${col}`
-		const data = state.dataState && state.dataState[id]
+		const data = state.dataState[id]
+		const styles = toInlineStyles(state.stylesState[id])
 
 		return `
 			<div
 				class="excel-table__cell"
-				style="width: ${width}"
+				style="${styles}; width: ${width}"
 				contenteditable
 				data-col="${col}"
 				data-type="cell"
