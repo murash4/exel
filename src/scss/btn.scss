@@ -6,6 +6,10 @@
   color: rgba(0, 0, 0, 0.7);
   text-align: center;
 
+  * {
+    pointer-events: none;
+  }
+
   & > span {
     font-size: 18px;
   }
