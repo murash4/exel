@@ -4,7 +4,7 @@ function getAllKeys () {
 	for (let i = 0; i < localStorage.length; i++) {
 		const key = localStorage.key([i])
 
-		if (key && key.includes('excel')) {
+		if (key && key.includes('excel:')) {
 			keys.push(key)
 		}
 	}
