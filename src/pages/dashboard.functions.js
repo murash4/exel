@@ -1,3 +1,5 @@
+import { storage } from '@core/utils'
+
 function getAllKeys () {
 	const keys = []
 
@@ -12,10 +14,13 @@ function getAllKeys () {
 	return keys
 }
 
-function toHTML (item, index) {
+function toHTML (key) {
+	const model = storage(key)
+	const id = key.split(':')[1]
+
 	return `
 		<li class="db__list-record">
-			<a href="" class="db__list-record-link">Таблица №1</a>
+			<a href="#excel/${id}" class="db__list-record-link">${model.title}</a>
 			<strong>12.06.2020</strong>
 		</li>
 	`
